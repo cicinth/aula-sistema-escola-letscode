@@ -1,0 +1,34 @@
+br/com/letscode/dao/CursoDao.java
+ br.com.letscode.dao.CursoDao
+br/com/letscode/controller/AlunoController.java
+ br.com.letscode.controller.AlunoController
+br/com/letscode/entity/TelefoneProfessor.java
+ br.com.letscode.entity.TelefoneProfessor
+br/com/letscode/util/JPAUtil.java
+ br.com.letscode.util.JPAUtil
+br/com/letscode/dao/DisciplinaDao.java
+ br.com.letscode.dao.DisciplinaDao
+br/com/letscode/controller/DisciplinaController.java
+ br.com.letscode.controller.DisciplinaController
+br/com/letscode/entity/Disciplina.java
+ br.com.letscode.entity.Disciplina
+br/com/letscode/entity/Aluno.java
+ br.com.letscode.entity.Aluno
+br/com/letscode/entity/CursoDisciplinaProfessor.java
+ br.com.letscode.entity.CursoDisciplinaProfessor
+br/com/letscode/entity/Curso.java
+ br.com.letscode.entity.Curso
+br/com/letscode/controller/CursoController.java
+ br.com.letscode.controller.CursoController
+br/com/letscode/entity/Professor.java
+ br.com.letscode.entity.Professor
+br/com/letscode/dao/AlunoDao.java
+ br.com.letscode.dao.AlunoDao
+br/com/letscode/dao/ProfessorDao.java
+ br.com.letscode.dao.ProfessorDao
+br/com/letscode/entity/Modalidade.java
+ br.com.letscode.entity.Modalidade
+br/com/letscode/controller/ProfessorController.java
+ br.com.letscode.controller.ProfessorController
+br/com/letscode/Main.java
+ br.com.letscode.Main
