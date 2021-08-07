@@ -1,22 +1,21 @@
 package br.com.letscode.controller;
 
-import br.com.letscode.dao.CursoDao;
-import br.com.letscode.dao.ProfessorDao;
 import br.com.letscode.entity.Curso;
-import br.com.letscode.util.JPAUtil;
+import br.com.letscode.repository.CursoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.EntityManager;
-
+@RestController
 public class CursoController {
-    public static Curso cadastraCurso(Curso curso){
-        EntityManager entityManager = JPAUtil.getEntityManager();
 
-        CursoDao cursoDao = new CursoDao(entityManager);
-        entityManager.getTransaction().begin();
-        cursoDao.salvar(curso);
-        entityManager.getTransaction().commit();
-        entityManager.close();
+    @Autowired
+    private CursoRepository cursoRepository;
 
-        return curso;
+    @RequestMapping("/cursos")
+    public Iterable<Curso> buscarCursos(){
+        Iterable<Curso> cursos = cursoRepository.findAll();
+
+        return  cursos;
     }
 }

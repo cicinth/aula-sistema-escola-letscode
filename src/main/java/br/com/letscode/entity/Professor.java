@@ -1,17 +1,15 @@
 package br.com.letscode.entity;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "professor")
+@ToString
 public class Professor {
     @Id
     @Column(name = "registro_professor")

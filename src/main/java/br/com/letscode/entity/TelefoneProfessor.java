@@ -2,11 +2,13 @@ package br.com.letscode.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "telefone_professor")
 public class TelefoneProfessor {

@@ -1,23 +1,20 @@
 package br.com.letscode.controller;
 
 import br.com.letscode.entity.Professor;
-import br.com.letscode.dao.ProfessorDao;
-import br.com.letscode.util.JPAUtil;
+import br.com.letscode.repository.ProfessorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.EntityManager;
-
+@RestController
 public class ProfessorController {
 
-    public static Professor cadastraProfessor(Professor professor){
+    @Autowired
+    private ProfessorRepository professorRepository;
 
-        EntityManager entityManager = JPAUtil.getEntityManager();
-
-        ProfessorDao professorDao = new ProfessorDao(entityManager);
-        entityManager.getTransaction().begin();
-        professorDao.salvar(professor);
-        entityManager.getTransaction().commit();
-        entityManager.close();
-
-        return professor;
+    @RequestMapping("/professores")
+    public Iterable<Professor> buscarProfessores(){
+        Iterable<Professor> professores = professorRepository.findAll();
+        return professores;
     }
 }
