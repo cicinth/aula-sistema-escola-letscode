@@ -18,14 +18,16 @@ br/com/letscode/entity/Disciplina.java
  br.com.letscode.entity.Disciplina
 br/com/letscode/entity/Aluno.java
  br.com.letscode.entity.Aluno
-br/com/letscode/controller/ProfessorController.java
- br.com.letscode.controller.ProfessorController
+br/com/letscode/response/AlunoResponse.java
+ br.com.letscode.response.AlunoResponse
 br/com/letscode/entity/CursoDisciplinaProfessor.java
  br.com.letscode.entity.CursoDisciplinaProfessor
 br/com/letscode/entity/Curso.java
  br.com.letscode.entity.Curso
 br/com/letscode/controller/CursoController.java
  br.com.letscode.controller.CursoController
+br/com/letscode/response/ProfessorProjecao.java
+ br.com.letscode.response.ProfessorProjecao
 br/com/letscode/entity/Modalidade.java
  br.com.letscode.entity.Modalidade
 br/com/letscode/request/AlunoRequestAtualizar.java
@@ -36,8 +38,8 @@ br/com/letscode/request/DisciplinaRequest.java
  br.com.letscode.request.DisciplinaRequest
 br/com/letscode/response/DisciplinaResponse.java
  br.com.letscode.response.DisciplinaResponse
-br/com/letscode/repository/CursoRepository.java
- br.com.letscode.repository.CursoRepository
+br/com/letscode/controller/AlunoController.java
+ br.com.letscode.controller.AlunoController
 br/com/letscode/Main.java
  br.com.letscode.Main
 br/com/letscode/request/AlunoRequest.java
@@ -46,15 +48,15 @@ br/com/letscode/controller/CursoDisciplinaProfessorController.java
  br.com.letscode.controller.CursoDisciplinaProfessorController
 br/com/letscode/repository/ProfessorRepository.java
  br.com.letscode.repository.ProfessorRepository
-br/com/letscode/response/AlunoResponse.java
- br.com.letscode.response.AlunoResponse
+br/com/letscode/repository/AlunoRepository.java
+ br.com.letscode.repository.AlunoRepository
 br/com/letscode/response/CursoResponse.java
  br.com.letscode.response.CursoResponse
 br/com/letscode/entity/Professor.java
  br.com.letscode.entity.Professor
 br/com/letscode/repository/TelefoneProfessorRepository.java
  br.com.letscode.repository.TelefoneProfessorRepository
-br/com/letscode/controller/AlunoController.java
- br.com.letscode.controller.AlunoController
-br/com/letscode/repository/AlunoRepository.java
- br.com.letscode.repository.AlunoRepository
+br/com/letscode/controller/ProfessorController.java
+ br.com.letscode.controller.ProfessorController
+br/com/letscode/repository/CursoRepository.java
+ br.com.letscode.repository.CursoRepository

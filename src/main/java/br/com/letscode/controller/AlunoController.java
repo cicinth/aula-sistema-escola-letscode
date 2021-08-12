@@ -6,6 +6,8 @@ import br.com.letscode.repository.CursoRepository;
 import br.com.letscode.request.AlunoRequest;
 import br.com.letscode.request.AlunoRequestAtualizar;
 import br.com.letscode.response.AlunoResponse;
+import br.com.letscode.service.AlunoService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,36 +17,49 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/alunos")
 public class AlunoController {
 
-    @Autowired
-    private AlunoRepository alunoRepository;
 
-    @Autowired
-    private CursoRepository cursoRepository;
+    private final AlunoRepository alunoRepository;
 
-    @GetMapping()
-    public List<AlunoResponse> buscarAlunos(String nome, String nomeCurso, String sobrenome, Integer duracao, Integer ano){
-        if(nome != null){
-            List alunos = alunoRepository.findByNome(nome);
-            return AlunoResponse.convert(alunos);
-        }else if(nomeCurso != null && sobrenome != null){
-            List alunos = alunoRepository.findByCodigoCursoNomeCursoAndSobrenome(nomeCurso, sobrenome);
-            return AlunoResponse.convert(alunos);
-        } else if(nomeCurso != null){
-            List alunos = alunoRepository.findByCodigoCursoNomeCurso(nomeCurso);
-            return AlunoResponse.convert(alunos);
-        } else if(duracao != null){
-            List alunos = alunoRepository.findByCodigoCursoDuracaoEquals(duracao);
-            return AlunoResponse.convert(alunos);
-        } else if (ano != null){
-            List alunos = alunoRepository.findByAnoNascimento(ano);
-            return AlunoResponse.convert(alunos);
-        }else {
-            List alunos = alunoRepository.findAll();
-            return AlunoResponse.convert(alunos);
-        }
+    private final CursoRepository cursoRepository;
+
+    private final AlunoService alunoService;
+
+    @GetMapping("/buscarNome/{nome}")
+    public ResponseEntity<List<AlunoResponse>> buscarAlunos(@PathVariable String nome) {
+        List alunos = alunoRepository.findByNome(nome);
+
+        return ResponseEntity.ok().body(AlunoResponse.convert(alunos));
+    }
+
+      // @GetMapping("/cursoSobreno/{curso}{}")
+
+
+
+
+
+
+
+
+//        }else if(nomeCurso != null && sobrenome != null){
+//            List alunos = alunoRepository.findByCodigoCursoNomeCursoAndSobrenome(nomeCurso, sobrenome);
+//            return AlunoResponse.convert(alunos);
+//        } else if(nomeCurso != null){
+//            List alunos = alunoRepository.findByCodigoCursoNomeCurso(nomeCurso);
+//            return AlunoResponse.convert(alunos);
+//        } else if(duracao != null){
+//            List alunos = alunoRepository.findByCodigoCursoDuracaoEquals(duracao);
+//            return AlunoResponse.convert(alunos);
+//        } else if (ano != null){
+//            List alunos = alunoRepository.findByAnoNascimento(ano);
+//            return AlunoResponse.convert(alunos);
+//        }else {
+//            List alunos = alunoRepository.findAll();
+//            return AlunoResponse.convert(alunos);
+//        }
     }
 
     @PostMapping
