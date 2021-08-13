@@ -54,20 +54,17 @@ public class AlunoController {
         return ResponseEntity.ok().body(AlunoResponse.convert(alunos));
     }
 
+    @GetMapping("/buscarPorAno/{ano}")
+    public ResponseEntity<List<AlunoResponse>> buscarPorNascimento(@PathVariable int ano){
+        var alunos = this.alunoRepository.findByAnoNascimento(ano);
+        return ResponseEntity.ok().body(AlunoResponse.convert(alunos));
+    }
 
-
-
-
-//        } else if(duracao != null){
-//            List alunos = alunoRepository.findByCodigoCursoDuracaoEquals(duracao);
-//            return AlunoResponse.convert(alunos);
-//        } else if (ano != null){
-//            List alunos = alunoRepository.findByAnoNascimento(ano);
-//            return AlunoResponse.convert(alunos);
-//        }else {
-//            List alunos = alunoRepository.findAll();
-//            return AlunoResponse.convert(alunos);
-//        }
+    @GetMapping()
+    public ResponseEntity<List<AlunoResponse>> buscartodos(){
+        var alunos = this.alunoRepository.findAll();
+        return ResponseEntity.ok().body(AlunoResponse.convert(alunos));
+    }
 
     @PostMapping
     public ResponseEntity<AlunoResponse> cadastrar(
