@@ -1,13 +1,16 @@
 package br.com.letscode.controller;
 
-import br.com.letscode.entity.Aluno;
 import br.com.letscode.entity.Curso;
 import br.com.letscode.repository.CursoRepository;
 import br.com.letscode.request.CursoRequest;
 import br.com.letscode.request.CursoRequestAtualizar;
 import br.com.letscode.response.AlunoResponse;
 import br.com.letscode.response.CursoResponse;
+import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.querydsl.binding.QuerydslPredicate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -23,8 +26,8 @@ public class CursoController {
     private CursoRepository cursoRepository;
 
     @GetMapping
-    public List<CursoResponse> buscarCursos(){
-        List<Curso> cursos = cursoRepository.findAll();
+    public Page<CursoResponse> buscarCursos(@QuerydslPredicate(root = Curso.class) Predicate predicate, Pageable pageable){
+        Page<Curso> cursos = cursoRepository.findAll(predicate, pageable);
         return  CursoResponse.convert(cursos);
     }
     @PostMapping

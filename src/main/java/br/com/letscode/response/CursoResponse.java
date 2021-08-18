@@ -4,6 +4,7 @@ import br.com.letscode.entity.Aluno;
 import br.com.letscode.entity.Curso;
 import br.com.letscode.entity.Modalidade;
 import lombok.Getter;
+import org.springframework.data.domain.Page;
 
 import java.sql.Date;
 import java.util.List;
@@ -24,8 +25,8 @@ public class CursoResponse {
         this.modalidade = curso.getModalidade();
     }
 
-    public static List<CursoResponse> convert(List<Curso> cursos){
-        return cursos.stream().map(CursoResponse::new).collect(Collectors.toList());
+    public static Page<CursoResponse> convert(Page<Curso> cursos){
+        return cursos.map(CursoResponse::new);
     }
 
 }
