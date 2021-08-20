@@ -1,21 +1,37 @@
 br/com/letscode/request/CursoRequestAtualizar.java
  br.com.letscode.request.CursoRequestAtualizar
+br/com/letscode/repository/PerfilRepository.java
+ br.com.letscode.repository.PerfilRepository
 br/com/letscode/request/ProfessorRequest.java
  br.com.letscode.request.ProfessorRequest
+br/com/letscode/response/PerfilResponse.java
+ br.com.letscode.response.PerfilResponse
+br/com/letscode/repository/CursoRepository.java
+ br.com.letscode.repository.CursoRepository
+br/com/letscode/request/LoginRequest.java
+ br.com.letscode.request.LoginRequest
 br/com/letscode/controller/TelefoneProfessorController.java
  br.com.letscode.controller.TelefoneProfessorController
 br/com/letscode/repository/CursoDisciplinaRepository.java
  br.com.letscode.repository.CursoDisciplinaRepository
 br/com/letscode/entity/TelefoneProfessor.java
  br.com.letscode.entity.TelefoneProfessor
+br/com/letscode/service/AutenticacaoService.java
+ br.com.letscode.service.AutenticacaoService
 br/com/letscode/controller/DisciplinaController.java
  br.com.letscode.controller.DisciplinaController
 br/com/letscode/repository/DisciplinaRepository.java
  br.com.letscode.repository.DisciplinaRepository
+br/com/letscode/controller/ProfessorController.java
+ br.com.letscode.controller.ProfessorController
 br/com/letscode/response/ProfessorResponse.java
  br.com.letscode.response.ProfessorResponse
 br/com/letscode/entity/Disciplina.java
  br.com.letscode.entity.Disciplina
+br/com/letscode/controller/PerfilController.java
+ br.com.letscode.controller.PerfilController
+br/com/letscode/repository/UsuarioRepository.java
+ br.com.letscode.repository.UsuarioRepository
 br/com/letscode/entity/Aluno.java
  br.com.letscode.entity.Aluno
 br/com/letscode/response/AlunoResponse.java
@@ -24,56 +40,24 @@ br/com/letscode/entity/CursoDisciplinaProfessor.java
  br.com.letscode.entity.CursoDisciplinaProfessor
 br/com/letscode/entity/Curso.java
  br.com.letscode.entity.Curso
-br/com/letscode/controller/ProfessorController.java
- br.com.letscode.controller.ProfessorController
+br/com/letscode/controller/CursoController.java
+ br.com.letscode.controller.CursoController
 br/com/letscode/response/ProfessorProjecao.java
  br.com.letscode.response.ProfessorProjecao
 br/com/letscode/entity/Modalidade.java
  br.com.letscode.entity.Modalidade
-br/com/letscode/repository/TelefoneProfessorRepository.java
- br.com.letscode.repository.TelefoneProfessorRepository
+br/com/letscode/request/AlunoRequestAtualizar.java
+ br.com.letscode.request.AlunoRequestAtualizar
 br/com/letscode/request/CursoRequest.java
  br.com.letscode.request.CursoRequest
 br/com/letscode/request/DisciplinaRequest.java
  br.com.letscode.request.DisciplinaRequest
 br/com/letscode/response/DisciplinaResponse.java
  br.com.letscode.response.DisciplinaResponse
-br/com/letscode/response/CursoResponse.java
- br.com.letscode.response.CursoResponse
-br/com/letscode/Main.java
- br.com.letscode.Main
-br/com/letscode/entity/Professor.java
- br.com.letscode.entity.Professor
-br/com/letscode/controller/CursoDisciplinaProfessorController.java
- br.com.letscode.controller.CursoDisciplinaProfessorController
-br/com/letscode/repository/ProfessorRepository.java
- br.com.letscode.repository.ProfessorRepository
-br/com/letscode/repository/AlunoRepository.java
- br.com.letscode.repository.AlunoRepository
-br/com/letscode/controller/AlunoController.java
- br.com.letscode.controller.AlunoController
-br/com/letscode/controller/CursoController.java
- br.com.letscode.controller.CursoController
-br/com/letscode/request/AlunoRequestAtualizar.java
- br.com.letscode.request.AlunoRequestAtualizar
-br/com/letscode/request/AlunoRequest.java
- br.com.letscode.request.AlunoRequest
-br/com/letscode/repository/CursoRepository.java
- br.com.letscode.repository.CursoRepository
-br/com/letscode/repository/PerfilRepository.java
- br.com.letscode.repository.PerfilRepository
-br/com/letscode/repository/UsuarioRepository.java
- br.com.letscode.repository.UsuarioRepository
-br/com/letscode/request/PerfilRequest.java
- br.com.letscode.request.PerfilRequest
 br/com/letscode/entity/Perfil.java
  br.com.letscode.entity.Perfil
-br/com/letscode/controller/PerfilController.java
- br.com.letscode.controller.PerfilController
-br/com/letscode/service/AutenticacaoService.java
- br.com.letscode.service.AutenticacaoService
-br/com/letscode/response/PerfilResponse.java
- br.com.letscode.response.PerfilResponse
+br/com/letscode/controller/AlunoController.java
+ br.com.letscode.controller.AlunoController
 br/com/letscode/response/UsuarioResponse.java
  br.com.letscode.response.UsuarioResponse
 br/com/letscode/entity/Usuario.java
@@ -82,13 +66,31 @@ br/com/letscode/controller/UsuarioController.java
  br.com.letscode.controller.UsuarioController
 br/com/letscode/request/UsuarioRequest.java
  br.com.letscode.request.UsuarioRequest
-br/com/letscode/request/LoginRequest.java
- br.com.letscode.request.LoginRequest
+br/com/letscode/Main.java
+ br.com.letscode.Main
+br/com/letscode/request/AlunoRequest.java
+ br.com.letscode.request.AlunoRequest
+br/com/letscode/controller/CursoDisciplinaProfessorController.java
+ br.com.letscode.controller.CursoDisciplinaProfessorController
+br/com/letscode/repository/ProfessorRepository.java
+ br.com.letscode.repository.ProfessorRepository
+br/com/letscode/repository/AlunoRepository.java
+ br.com.letscode.repository.AlunoRepository
+br/com/letscode/response/CursoResponse.java
+ br.com.letscode.response.CursoResponse
+br/com/letscode/entity/Professor.java
+ br.com.letscode.entity.Professor
+br/com/letscode/request/PerfilRequest.java
+ br.com.letscode.request.PerfilRequest
 br/com/letscode/response/LoginResponse.java
  br.com.letscode.response.LoginResponse
-br/com/letscode/config/WebSecurityConfig.java
- br.com.letscode.config.WebSecurityConfig
+br/com/letscode/repository/TelefoneProfessorRepository.java
+ br.com.letscode.repository.TelefoneProfessorRepository
 br/com/letscode/service/TokenService.java
  br.com.letscode.service.TokenService
 br/com/letscode/controller/LoginController.java
  br.com.letscode.controller.LoginController
+br/com/letscode/config/WebSecurityConfig.java
+ br.com.letscode.config.WebSecurityConfig
+br/com/letscode/filter/Autenticar.java
+ br.com.letscode.filter.Autenticar
